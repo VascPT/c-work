@@ -13,9 +13,9 @@ string Modelo*/
         string marca;
         string modelo;
     };
-void myFunction(Carro c){
+void myFunction(Carro carro){
     
-    cout << "Marca: " << c.marca << ", Modelo: " << c.modelo << endl;
+    cout << "Marca: " << carro.marca << ", Modelo: " << carro.modelo << endl;
 }
 
 int main(){
