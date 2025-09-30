@@ -24,3 +24,21 @@ int main(){
     return 0;
 }*/
 
+struct Escola{
+    string nome;
+    string morada;
+};
+
+struct Aluno{
+    string nome;
+    int idade;
+    string caracteristicas;
+    Escola escola;
+};
+
+Aluno a1 = {"Roberto", 20, "autista", {"domingos rebelo", "Ponta Delgada"}};
+
+int main() {
+    cout << a1.escola.morada;
+    return 0;
+}
