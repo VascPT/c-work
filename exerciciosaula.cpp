@@ -14,6 +14,7 @@ using namespace std;
         string modelo;
     };
 void myFunction(Carro c){
+    
     cout << "Marca: " << c.marca << ", Modelo: " << c.modelo << endl;
 }
 
