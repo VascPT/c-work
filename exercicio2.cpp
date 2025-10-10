@@ -31,6 +31,7 @@ int main(){
     int x;
     cout << "How old are you?" << endl;
     cin >> x;
+    this_thread::sleep_for(chrono::seconds(1));
     if(x==1){
     cout << endl << "I am " << x << " year old!" << endl;
 }else if (x>= 2 || x<= 0){
