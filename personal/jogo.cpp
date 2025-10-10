@@ -85,6 +85,16 @@ void jogo(){
        float valorprod4E;
         valorprod4E = 200; 
         valorCarteira -= 200;
+        float valorReceber4E;
+        valorReceber4E = valorprod4E * 1.3;
+           valorCarteira += valorReceber4E;
+    cout << endl <<"Obteve: " << valorReceber4E << " euros de volta!"  << endl;
+        cout << endl << "Fazer mais compras?" << endl;
+        cout << "________________________________________________________________________________________________________________________" << endl << endl;
+        cout << "Carteira: " << valorCarteira << endl << endl;
+        cout << "1- " << prod1 << " (1 euro)             2- " << prod2 << " (5 euros)              3- " << prod3 << " (50 euros)             4- " << prod4 << " (200 euros)" << endl;
+        cout << "________________________________________________________________________________________________________________________" << endl << endl;
+        cin >> escolhaProd;
 
     break;
     case 5:
