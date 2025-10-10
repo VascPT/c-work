@@ -28,34 +28,10 @@ void jogo(){
         cout << endl << endl << "Obrigado por fazer compras! Ate a proxima!" << endl << endl << endl;
         exit(0);
     }
-
+    while (true){
+   if(valorCarteira >= valorprod2 || valorprod3 || valorprod4){
    
-
-      /*while(valorprod2 || valorprod3 || valorprod4 <= valorCarteira){
-    if(escolhaProd == 1){
-           valorCarteira -= 1;
-        float valorReceber1 = valorprod1 * 2;
-           valorCarteira += valorReceber1;
-        }
-    if(escolhaProd == 2){
-           valorCarteira -= 5;
-        float valorReceber2 = valorprod2 * 1.4;
-           valorCarteira += valorReceber2;
-        }
-    if(escolhaProd == 3){
-           valorCarteira -= 50;
-        float valorReceber3 = valorprod3 * 1.3;
-           valorCarteira += valorReceber3;
-        }
-    if(escolhaProd == 4){
-           valorCarteira -= 200;
-        float valorReceber4 = valorprod4 * 1.2;
-           valorCarteira += valorReceber4;
-        }
-      }*/
-
-
-    while(escolhaProd == 1 || 2 || 3 || 4){ 
+    if(escolhaProd == 1 || 2 || 3 || 4){ 
 
     switch (escolhaProd){ 
 
@@ -109,17 +85,6 @@ void jogo(){
        float valorprod4E;
         valorprod4E = 200; 
         valorCarteira -= 200;
-        float valorReceber4E;
-        valorReceber4E = valorprod4 * 1.2;
-           valorCarteira += valorReceber4E;
-
-    cout << endl <<"Obteve: " << valorReceber4E << " euros de volta!"  << endl;
-        cout << endl << "Fazer mais compras?" << endl;
-        cout << "________________________________________________________________________________________________________________________" << endl << endl;
-        cout << "Carteira: " << valorCarteira << endl << endl;
-        cout << "1- " << prod1 << " (1 euro)             2- " << prod2 << " (5 euros)              3- " << prod3 << " (50 euros)             4- " << prod4 << " (200 euros)" << endl;
-        cout << "________________________________________________________________________________________________________________________" << endl << endl;
-        cin >> escolhaProd;
 
     break;
     case 5:
@@ -127,8 +92,15 @@ void jogo(){
       cout << endl << endl << "Obrigado por fazer compras! Ate a proxima!" << endl << endl << endl;
       exit(0);
   }
-    break;
+  break;
+}
+    
 }    
+}else{
+   cout << endl << "Nao tem dinheiro suficiente, experimente comprar algo mais barato!" << endl;
+   break;
 }
 }
+}
+
 
