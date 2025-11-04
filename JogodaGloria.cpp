@@ -18,6 +18,9 @@ const int Avanca_tres_casas = 5; //casa 5
 const int Joga_novament = 15; //casa 15
 const int Espera_passg = 23; // casa 23
 
+string nomeP1;
+string nomeP2;
+
 void iniciarCasas(string casas[N]){
     for (int i=0; i<N; i++)
         casas[i] = '---';
