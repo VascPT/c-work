@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <unistd.h>
 #include <limits>
 using namespace std;
 void clear(){
@@ -21,6 +22,7 @@ const int Espera_passg = 20; // casa 20
 string nomeP1;
 string nomeP2;
 
+
 void iniciarCasas(string casas[N]){
     for (int i=0; i<N; i++)
         casas[i] = '-';
@@ -31,7 +33,7 @@ void iniciarCasas(string casas[N]){
     casas[Espera_passg] = "EP"; //Espera passagem do próximo jogador
 }
 
-void imprimirCasas(string casas[N]){
+void imprimirCasas(const string casas[N], int posP1, int posP2){
     //linha dos números (1...30)
     for(int i=0 ; i<N;i++){ 
         cout<<(i+1<10?" ":"")<<i+1<<" ";
@@ -40,9 +42,22 @@ void imprimirCasas(string casas[N]){
 
     for(int i=0; i<N; i++){
         string cell = casas[i];
+    
+    bool p1 = (posP1 == i);
+    bool p2 = (posP2 == i);
+    if(p1 && p2){
+        cell = "P*"; //Ambos os jogadores na mesma casa
+    }else if(p1){
+        cell = "P1"; //Casa com Player 1
+    }else if(p2){
+        cell = "P2"; //Casa com Player 2
     }
-
 }
+}
+
+
+
+
 void dado(){
     std::srand(std::time(nullptr)); // inicializa o gerador com o tempo atual
     int numero = std::rand() % 6 + 1; // número entre 1 e 6 (como um dado)
@@ -51,4 +66,24 @@ void dado(){
 
 int main(){
     clear();
+    cout << "Selecione o nome para o Player 1!: ";
+    cin >> nomeP1;
+    
+    cout << endl << "Ola " << nomeP1 << "! Vamos avançar para o Player 2..." << endl;
+    sleep(3);
+    clear();
+    cout << "Selecione o nome para o Player 2!: ";
+    cin >> nomeP2;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    cout << endl << "Ola " << nomeP2 << "! Prima ENTER para começar o jogo.";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    clear();
+
+    string casas[N];
+    iniciarCasas(casas);
+    int posP1 = 0;
+    int posP2 = 0;
+    imprimirCasas(casas, posP1, posP2);
+
+
 }
