@@ -25,12 +25,12 @@ string nomeP2;
 
 void iniciarCasas(string casas[N]){
     for (int i=0; i<N; i++)
-        casas[i] = '-';
-    casas[Perde_Jogada] = "PJ"; //Perde a vez
-    casas[Volta_tres_casas] = "V3"; //Volta 3 casas
-    casas[Avanca_tres_casas] = "A3"; //Avança 3 casas
-    casas[Joga_novament] = "JN"; //Joga novamente
-    casas[Espera_passg] = "EP"; //Espera passagem do próximo jogador
+        casas[i] = "-";
+    casas[Perde_Jogada -1] = "PJ"; //Perde a vez
+    casas[Volta_tres_casas -1] = "V3"; //Volta 3 casas
+    casas[Avanca_tres_casas -1] = "A3"; //Avança 3 casas
+    casas[Joga_novament -1] = "JN"; //Joga novamente
+    casas[Espera_passg -1] = "EP"; //Espera passagem do próximo jogador
 }
 
 void imprimirCasas(const string casas[N], int posP1, int posP2){
@@ -52,6 +52,11 @@ void imprimirCasas(const string casas[N], int posP1, int posP2){
     }else if(p2){
         cell = "P2"; //Casa com Player 2
     }
+
+    if(cell.size()==1){ //garantir largura 2 por casa
+        cell = " " + cell; 
+    }
+    cout << cell << " ";
 }
     cout << "\n";
 }
