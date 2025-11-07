@@ -53,6 +53,7 @@ void imprimirCasas(const string casas[N], int posP1, int posP2){
         cell = "P2"; //Casa com Player 2
     }
 }
+    cout << "\n";
 }
 
 
