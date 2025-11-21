@@ -10,7 +10,7 @@ void clear(){
     #endif
 }
 
-#define MAX_NUMEROS = 60
+#define MAX_NUMEROS 60
 vector<int> baralho; 
 
 void gerarSequencia(){
