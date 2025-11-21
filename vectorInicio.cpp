@@ -9,7 +9,16 @@ void clear(){
         system("clear");
     #endif
 }
-vector<int> baralho = {1,2,3,4,5,6,7,8,9,10}; 
+
+#define MAX_NUMEROS = 60
+vector<int> baralho; 
+
+void gerarSequencia(){
+    baralho.clear();
+    for (int i=1; i <= MAX_NUMEROS; i++){
+        baralho.push_back(i);
+    }
+}
 
 void baralharB(){
     random_shuffle(baralho.begin(), baralho.end());
@@ -25,6 +34,7 @@ void mostrarBaralhado(){
 
 int main(){
     clear();
+    gerarSequencia();
     baralharB();
     mostrarBaralhado();
 
