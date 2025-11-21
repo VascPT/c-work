@@ -2,7 +2,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include <windows.h>
+#include <unistd.h>
+//#include <windows.h>
 #include <limits>
 #include <string>
 using namespace std;
