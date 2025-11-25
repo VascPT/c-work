@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-#define TOTAL_NUMS 50
+#define TOTAL_NUMS 100
 void clear(){
     #ifdef WIN32
         system("CLS");
