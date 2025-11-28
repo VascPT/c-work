@@ -10,7 +10,7 @@ void clear(){
 }
 float num1;
 float num2;
-string val;
+string op;
 
 int main(){
     clear();
@@ -26,8 +26,27 @@ int main(){
         cout << "Write the first number: ";
     }
     clear();
-    cout << "You entered: " << num1 << endl;
+    cout << "What operator you want? (This calc only accepts +, -, *, /): " << endl;
+    cin >> op;
+
+    do{
+        cout << "Operator chosen: " << op << endl;
+    }while(op != "+", "-", "*","/");
+
+
+
+
+    /*while (!(cin >> op))
+    {
+        // reset the status of the stream
+        cin.clear();
+        // ignore remaining characters in the stream
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        clear();
+        cout << "What operator you want? (This calc only accepts +, -, *, /): ";
+    }*/
     
+
     
 
 
