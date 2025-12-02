@@ -1,6 +1,9 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
+#ifdef WIN32
+        #include <windows.h>
+    #else
+        #include <unistd.h>
+    #endif
 using namespace std;
 #define TOTAL_NUMS 100
 #define PER_LINE 20
@@ -10,7 +13,6 @@ using namespace std;
 #define WHITE "\033[37m"
 #define CYAN "\033[36m"
 #define YELLOW "\033[33m"
-#define BGGRAY "\033[100m"
 #define PURPLE "\e[0;35m"
 void clear(){
     #ifdef WIN32
@@ -23,7 +25,7 @@ void clear(){
 void showNumbers(){
     //shows all the 100 nums
     for(int i=1; i<=TOTAL_NUMS; i++){
-        cout << i << " ";
+        cout << CYAN << i << " ";
         //Makes lines of 20
         if (i % PER_LINE == 0){
         cout << "\n";
