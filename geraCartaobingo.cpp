@@ -109,8 +109,4 @@ int main(int argc, char* argv[]) {
     cout << "Ficheiros criados: cartao1.txt a cartao" << num_cartoes << ".txt" << endl;
     
     return 0;
-}n";
-    cout << "cartao1.txt, cartao2.txt, ... cartao" << num_cartoes << ".txt\n";
-    
-    return 0;
 }
