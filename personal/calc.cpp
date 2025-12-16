@@ -55,29 +55,24 @@ int main(){
         cout << BLUE << "Write the first number: " << RESET;
     }
 
-    switch(num1, num2, op){
-        case 1:
-        if(op == '+'){
-            cout << PURPLE << "The result is: " << RESET << YELLOW << num1 + num2 << RESET;
-        }
+    float result;
+    switch(op){
+        case '+':
+            result = num1 + num2;
         break;
-        case 2:
-        if(op == '-'){
-            cout << PURPLE << "The result is: " << RESET << YELLOW << num1 - num2 << RESET;
-        }
+        case '-':
+            result = num1 - num2;
         break;
-        case 3:
-        if(op == '*'){
-            cout << PURPLE << "The result is: " << RESET << YELLOW << num1 * num2 << RESET;
-        }
+        case '*':
+            result = num1 * num2;
         break;
-        case 4:
-        if(op == '/'){
-            cout << PURPLE << "The result is: " << RESET << YELLOW << num1 / num2 << RESET;
-        }
+        case '/':
+            result = num1 / num2;
         break;
 
     }
+
+    cout << PURPLE << "The result is " << YELLOW << result << RESET << endl;
 
     return 0;
 }
