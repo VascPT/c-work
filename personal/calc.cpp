@@ -1,6 +1,13 @@
 #include <iostream>
 #include <limits>
 using namespace std;
+#define RESET "\033[0m"
+#define RED "\033[31m"
+#define BLUE "\033[34m"
+#define WHITE "\033[37m"
+#define CYAN "\033[36m"
+#define YELLOW "\033[33m"
+#define PURPLE "\e[0;35m"
 void clear(){
     #ifdef WIN32
         system("CLS");
@@ -8,47 +15,73 @@ void clear(){
         system("clear");
     #endif
 }
+
 float num1;
 float num2;
-string op;
+char op;
 
 int main(){
     clear();
-    cout << "Write the first number: ";
+    cout << BLUE << "Write the first number: " << RESET;
     while (!(cin >> num1))
     {
         // reset the status of the stream
         cin.clear();
         // ignore remaining characters in the stream
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.ignore();
         clear();
-        cout << "Calc only accepts numbers!" << endl;
-        cout << "Write the first number: ";
+        cout << RED << "Calc only accepts numbers!" << RESET << endl;
+        cout << BLUE << "Write the first number: " << RESET;
     }
     clear();
-    cout << "What operator you want? (This calc only accepts +, -, *, /): " << endl;
+    cout << BLUE << "What operator you want? (This calc only accepts +, -, *, /): " << RESET << endl;
     cin >> op;
 
-    do{
-        cout << "Operator chosen: " << op << endl;
-    }while(op != "+", "-", "*","/");
-
-
-
-
-    /*while (!(cin >> op))
+    while(op != '+' && op != '-' && op != '*' && op != '/'){
+    clear();
+    cout << RED << "This isn't an operator! Write a valid one(+, -, *, /): " << RESET;
+    cin >> op;
+    }
+    clear();
+    cout << BLUE << "Write the second number: " << RESET;
+    while (!(cin >> num2))
     {
         // reset the status of the stream
         cin.clear();
         // ignore remaining characters in the stream
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.ignore();
         clear();
-        cout << "What operator you want? (This calc only accepts +, -, *, /): ";
-    }*/
-    
+        cout << RED << "Calc only accepts numbers!" << RESET << endl;
+        cout << BLUE << "Write the first number: " << RESET;
+    }
 
-    
+    switch(num1, num2, op){
+        case 1:
+        if(op == '+'){
+            cout << PURPLE << "The result is: " << RESET << endl;
+            cout << YELLOW << num1 + num2 << RESET << endl;
+        }
+        break;
+        case 2:
+        if(op == '-'){
+            cout << PURPLE << "The result is: " << RESET << endl;
+            cout << YELLOW << num1 - num2 << RESET << endl;
+        }
+        break;
+        case 3:
+        if(op == '*'){
+            cout << PURPLE << "The result is: " << RESET << endl;
+            cout << YELLOW << num1 * num2 << RESET << endl;
+        }
+        break;
+        case 4:
+        if(op == '/'){
+            cout << PURPLE << "The result is: " << RESET << endl;
+            cout << YELLOW << num1 / num2 << RESET << endl;
+        }
+        break;
 
+    }
 
     return 0;
 }
