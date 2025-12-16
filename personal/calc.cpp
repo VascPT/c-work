@@ -58,26 +58,22 @@ int main(){
     switch(num1, num2, op){
         case 1:
         if(op == '+'){
-            cout << PURPLE << "The result is: " << RESET << endl;
-            cout << YELLOW << num1 + num2 << RESET << endl;
+            cout << PURPLE << "The result is: " << RESET << YELLOW << num1 + num2 << RESET;
         }
         break;
         case 2:
         if(op == '-'){
-            cout << PURPLE << "The result is: " << RESET << endl;
-            cout << YELLOW << num1 - num2 << RESET << endl;
+            cout << PURPLE << "The result is: " << RESET << YELLOW << num1 - num2 << RESET;
         }
         break;
         case 3:
         if(op == '*'){
-            cout << PURPLE << "The result is: " << RESET << endl;
-            cout << YELLOW << num1 * num2 << RESET << endl;
+            cout << PURPLE << "The result is: " << RESET << YELLOW << num1 * num2 << RESET;
         }
         break;
         case 4:
         if(op == '/'){
-            cout << PURPLE << "The result is: " << RESET << endl;
-            cout << YELLOW << num1 / num2 << RESET << endl;
+            cout << PURPLE << "The result is: " << RESET << YELLOW << num1 / num2 << RESET;
         }
         break;
 
