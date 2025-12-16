@@ -37,10 +37,19 @@ void showNumbers(){
     for(int i=1; i<=TOTAL_NUMS; i++){
        if (drawn[i]) {
             //drawn nums
-            cout << YELLOW << i << " ";
+            if(i<10){
+               cout << YELLOW << "0"+i << " "; 
+            }else{
+               cout << YELLOW << i << " "; 
+            }
+            
         } else {
             //regular nums
-            cout << CYAN << i << " ";
+            if(i<10){
+                cout << CYAN << "0"+i << " "; 
+             }else{
+                cout << CYAN << i << " "; 
+             }
         }
         //Makes lines of 20
         if (i % PER_LINE == 0){
