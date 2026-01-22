@@ -26,7 +26,7 @@ class Product{
     void setPrice(double p1){
         if (p1 < 0) {  //verifica se o preço é negativo
             prodPrice = 0;  //define como 0
-            cout << "Warning: Price can't be negate! Automatically set to 0." << endl;
+            cout << "Warning: Price can't be negative! Automatically set to 0." << endl;
         } else {
             prodPrice = p1;  //se não for negativo, usa o valor normal
         }
@@ -90,5 +90,6 @@ int main(){
     cout << "-------------------------------------" << endl;
     phone.showDetails();
     cout << "-------------------------------------" << endl;
+
 
 }
