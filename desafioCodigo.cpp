@@ -7,7 +7,6 @@ long temperature = 0;
 #define SET_POINT 45
 
 long randomizeTemperature(){
-    srand(time(0));
     temperature = rand() % 100;
     cout << "Temperature: " << temperature << endl;
     
@@ -23,12 +22,12 @@ void arCondicionado(){
 }
 
 int main(){
-
+    srand(time(0));
     //delay of 4 seconds
     for(int i = 0; i < 10; i++){
     randomizeTemperature();
     arCondicionado();
-    this_thread::sleep_for(chrono::seconds(1));
+    this_thread::sleep_for(chrono::seconds(4));
     }
 
   
