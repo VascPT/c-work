@@ -1,0 +1,36 @@
+#include <iostream>
+#include <thread>
+#include <chrono>
+using namespace std;
+
+long temperature = 0;
+#define SET_POINT 45
+
+long randomizeTemperature(){
+    srand(time(0));
+    temperature = rand() % 100;
+    cout << "Temperature: " << temperature << endl;
+    
+    return temperature;
+}
+
+void arCondicionado(){
+      if(temperature >= SET_POINT){
+        cout << "Ar condicionado ligado!" << endl;
+    }else{
+        cout << "Ar condicionado desligado!" << endl;
+    }
+}
+
+int main(){
+
+    //delay of 4 seconds
+    for(int i = 0; i < 10; i++){
+    randomizeTemperature();
+    arCondicionado();
+    this_thread::sleep_for(chrono::seconds(1));
+    }
+
+  
+    return 0;
+}
