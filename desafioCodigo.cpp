@@ -13,7 +13,7 @@ long randomizeTemperature(){
     return temperature;
 }
 
-void arCondicionado(){
+void aC(){
       if(temperature >= SET_POINT){
         cout << "AC on!" << endl;
     }else{
@@ -26,7 +26,7 @@ int main(){
     //delay of 4 seconds
     for(int i = 0; i < 10; i++){
     randomizeTemperature();
-    arCondicionado();
+    aC();
     this_thread::sleep_for(chrono::seconds(4));
     }
 
