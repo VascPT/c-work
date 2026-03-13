@@ -15,9 +15,9 @@ long randomizeTemperature(){
 
 void arCondicionado(){
       if(temperature >= SET_POINT){
-        cout << "Ar condicionado ligado!" << endl;
+        cout << "AC on!" << endl;
     }else{
-        cout << "Ar condicionado desligado!" << endl;
+        cout << "AC off!" << endl;
     }
 }
 
